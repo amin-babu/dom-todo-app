@@ -43,12 +43,12 @@ const deleteTask = (task) => {
 };
 
 const showMessage = (text, status) => {
-  message.style.display = 'block';
+  message.style.left = '0';
   message.textContent = text;
   message.classList.add(`message-${status}`);
 
   setTimeout(() => {
-    message.style.display = 'none';
+    message.style.left = '-500px';
     message.classList.remove('message-delete');
-  }, 1500);
+  }, 3000);
 };

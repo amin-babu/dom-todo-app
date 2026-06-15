@@ -104,9 +104,12 @@ body {
 #message {
   padding: 8px;
   font-weight: 700;
-  margin: 1rem 0;
-  display: none;
-  transition: display 0.8s;
+  margin: 1rem;
+  transition: all 0.3s;
+  transition-timing-function: ease-in-out;
+  position: absolute;
+  top: 0;
+  left: -500px;
 }
 
 .message-success {
