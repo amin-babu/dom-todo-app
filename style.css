@@ -36,6 +36,7 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: rgb(87, 146, 255);
 }
 
 .card form {
@@ -46,12 +47,13 @@ body {
 .card #input_todo {
   width: 100%;
   border: none;
-  padding: 5px 10px;
+  padding: 10px;
   border-radius: 3px;
 }
 
 .card .submit_btn {
-  padding: 5px 10px;
+  padding: 10px 1rem;
+  font-size: 14px;
   border: none;
   border-radius: 3px;
   background-color: rgb(25, 97, 231);
@@ -63,6 +65,60 @@ body {
 
 .card .submit_btn:hover {
   background-color: rgb(95, 146, 240);
+}
+
+.card #lists {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card #lists li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(25, 97, 231);
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.card #lists li .todo_title {
+  font-weight: 400;
+}
+
+.card #lists li .delete_btn {
+  border: none;
+  background-color: #010413cb;
+  padding: 7px;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card #lists li .delete_btn:hover {
+  background-color: #0a102fcb;
+}
+
+#message {
+  padding: 8px;
+  font-weight: 700;
+  margin: 1rem 0;
+  display: none;
+  transition: display 0.8s;
+}
+
+.message-success {
+  background-color: rgb(163, 245, 163);
+  color: rgb(2, 108, 2);
+  border-left: 6px solid rgb(1, 92, 1);
+}
+
+.message-delete {
+  background-color: rgb(245, 163, 163);
+  color: rgb(169, 0, 0);
+  border-left: 6px solid rgb(169, 0, 0);
 }
 
 @media (width < 768px) {
