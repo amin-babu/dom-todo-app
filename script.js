@@ -6,6 +6,10 @@ const todoAddBtn = document.querySelector('.submit_btn');
 const todoLists = document.querySelector('#lists');
 const message = document.querySelector('#message');
 
+const getTodosFromLocalStorage = () => {
+  return localStorage.getItem('myTodos') ? JSON.parse(localStorage.getItem('myTodos')) : [];
+};
+
 // addTodo
 const addTodo = (event) => {
   event.preventDefault();
@@ -16,10 +20,12 @@ const addTodo = (event) => {
   const todoId = Date.now().toString();
   createTodo(todoId, todoValue);
   showMessage('ToDo Taks added!', 'success');
-};
 
-// adding listeners
-todoForm.addEventListener('submit', addTodo);
+  // add on local storage
+  const todos = getTodosFromLocalStorage();
+  todos.push({ todoId, todoValue });
+  localStorage.setItem('myTodos', JSON.stringify(todos));
+};
 
 // creating todo list
 const createTodo = (uniqueID, todoValue) => {
@@ -36,10 +42,21 @@ const createTodo = (uniqueID, todoValue) => {
   todoLists.append(todoElement);
 };
 
+// adding listeners
+todoForm.addEventListener('submit', addTodo);
+window.addEventListener('DOMContentLoaded', () => {
+  const todos = getTodosFromLocalStorage();
+  todos.forEach((todo) => createTodo(todo.todoId, todo.todoValue));
+});
+
 const deleteTask = (task) => {
   const taskElement = task.parentElement.parentElement;
   todoLists.removeChild(taskElement);
   showMessage('Task Deleted!', 'delete');
+
+  // removing from local storage
+  const todos = getTodosFromLocalStorage().filter((todo) => todo.todoId !== taskElement.id);
+  localStorage.setItem('myTodos', JSON.stringify(todos));
 };
 
 const showMessage = (text, status) => {

@@ -36,7 +36,7 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: rgb(87, 146, 255);
+  color: rgb(109, 159, 251);
 }
 
 .card form {
@@ -106,7 +106,7 @@ body {
   font-weight: 700;
   margin: 1rem;
   transition: all 0.3s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: ease-out;
   position: absolute;
   top: 0;
   left: -500px;
