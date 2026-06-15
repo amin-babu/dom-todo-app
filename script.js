@@ -10,6 +10,7 @@ const message = document.querySelector('#message');
 const addTodo = (event) => {
   event.preventDefault();
   const todoValue = todoInput.value;
+  todoInput.value = '';
 
   // unique id
   const todoId = Date.now().toString();
@@ -27,12 +28,18 @@ const createTodo = (uniqueID, todoValue) => {
   todoElement.innerHTML = `
     <span class="todo_title">${todoValue}</span>
     <span>
-      <button class="delete_btn" id="deleteButton">
+      <button onclick="deleteTask(this)" class="delete_btn" id="deleteButton">
         <i class="fa-solid fa-trash"></i>
       </button>
     </span>
   `;
   todoLists.append(todoElement);
+};
+
+const deleteTask = (task) => {
+  const taskElement = task.parentElement.parentElement;
+  todoLists.removeChild(taskElement);
+  showMessage('Task Deleted!', 'delete');
 };
 
 const showMessage = (text, status) => {
@@ -41,7 +48,7 @@ const showMessage = (text, status) => {
   message.classList.add(`message-${status}`);
 
   setTimeout(() => {
-    todoInput.value = '';
     message.style.display = 'none';
+    message.classList.remove('message-delete');
   }, 1500);
 };
