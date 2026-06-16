@@ -21,6 +21,7 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 1rem;
+  gap: 1rem;
 }
 
 .card {
@@ -87,7 +88,7 @@ body {
   font-weight: 400;
 }
 
-.card #lists li .delete_btn {
+.card #lists li .cta_btn {
   border: none;
   background-color: #010413cb;
   padding: 7px;
@@ -97,7 +98,7 @@ body {
   transition: 0.3s;
 }
 
-.card #lists li .delete_btn:hover {
+.card #lists li .cta_btn:hover {
   background-color: #0a102fcb;
 }
 
@@ -124,12 +125,47 @@ body {
   border-left: 6px solid rgb(169, 0, 0);
 }
 
+.finish_tasks {
+  width: 20%;
+  min-height: 75vh;
+  background-color: #010413cb;
+  padding: 1rem;
+  border-radius: 5px;
+  display: none;
+}
+
+.finish_tasks ul {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.finish_tasks ul li {
+  background-color: rgb(25, 97, 231);
+  padding: 8px 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.finish_tasks ul li span {
+  font-weight: 600;
+}
+
+.finish_tasks ul li i {
+  color: #010413cb;
+}
+
 @media (width < 768px) {
   .container {
     align-items: flex-start;
+    flex-direction: column;
+    height: auto;
   }
 
-  .card {
+  .card,
+  .finish_tasks {
     width: 100%;
   }
 }
