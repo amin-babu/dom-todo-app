@@ -40,7 +40,9 @@ const taskFinish = (finishTask) => {
   const finishList = document.createElement('li');
   finishList.innerHTML = `
     <span>${finishTaskValue}</span>
-    <i class="fa-solid fa-clipboard-check"></i>
+    <button>
+      <i class="fa-solid fa-check"></i>
+    </button>
   `;
   finishLists.append(finishList);
   const taskElement = finishTask.parentElement.parentElement;
@@ -65,7 +67,9 @@ const finishTaskShowLocalStorage = (task) => {
   const finishList = document.createElement('li');
   finishList.innerHTML = `
     <span>${task}</span>
-    <i class="fa-solid fa-circle-check"></i>
+    <button>
+      <i class="fa-solid fa-check"></i>
+    </button>
   `;
   finishLists.append(finishList);
 }
@@ -117,3 +121,4 @@ const showMessage = (text, status) => {
     message.classList.remove('message-delete');
   }, 3000);
 };
+

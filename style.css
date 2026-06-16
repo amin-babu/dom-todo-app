@@ -33,7 +33,7 @@ body {
   overflow: auto;
 }
 
-.card .card_title {
+.card_title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -126,7 +126,7 @@ body {
 }
 
 .finish_tasks {
-  width: 20%;
+  width: 25%;
   min-height: 75vh;
   background-color: #010413cb;
   padding: 1rem;
@@ -153,8 +153,22 @@ body {
   font-weight: 600;
 }
 
-.finish_tasks ul li i {
-  color: #010413cb;
+.finish_tasks ul li button {
+  border: none;
+  background-color: #010413cb;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finish_tasks ul li button i {
+  font-size: 8px;
 }
 
 @media (width < 768px) {
