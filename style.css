@@ -27,10 +27,27 @@ body {
 .card {
   background-color: #010413cb;
   padding: 1rem;
-  min-height: 75vh;
+  height: 75vh;
   width: 40%;
   border-radius: 5px;
   overflow: auto;
+}
+
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card::-webkit-scrollbar-track {
+  background: rgb(41, 109, 236);
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #010413cb;
+  border-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+  background: #051150cb;
 }
 
 .card_title {
@@ -127,11 +144,29 @@ body {
 
 .finish_tasks {
   width: 25%;
-  min-height: 75vh;
+  height: 75vh;
   background-color: #010413cb;
   padding: 1rem;
   border-radius: 5px;
   display: none;
+  overflow: auto;
+}
+
+.finish_tasks::-webkit-scrollbar {
+  width: 6px;
+}
+
+.finish_tasks::-webkit-scrollbar-track {
+  background: rgb(41, 109, 236);
+}
+
+.finish_tasks::-webkit-scrollbar-thumb {
+  background: #010413cb;
+  border-radius: 10px;
+}
+
+.finish_tasks::-webkit-scrollbar-thumb:hover {
+  background: #051150cb;
 }
 
 .finish_tasks ul {
@@ -181,6 +216,6 @@ body {
   .card,
   .finish_tasks {
     width: 100%;
-    min-height: auto;
+    height: auto;
   }
 }
